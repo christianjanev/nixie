@@ -1974,7 +1974,7 @@
 		)
 	)
 	(text "nixie tube load\n"
-		(exclude_from_sim no)
+		(exclude_from_sim yes)
 		(at 167.386 98.298 0)
 		(effects
 			(font
@@ -1982,6 +1982,16 @@
 			)
 		)
 		(uuid "1c754035-ba6f-4849-8e60-b39f1d87260e")
+	)
+	(text ".options method=gear\n.options reltol=0.01\n.options abstol=1e-6\n.options vntol-1e-4"
+		(exclude_from_sim no)
+		(at 67.818 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "37419377-cfab-42d9-af79-33d73ea5df8d")
 	)
 	(text ".ic V(/VC1)=0"
 		(exclude_from_sim no)
@@ -1992,6 +2002,16 @@
 			)
 		)
 		(uuid "74da77d1-1363-457a-b3eb-35b6d61e4961")
+	)
+	(text "R9, R10, R11 are NOT supposed to be in the real fabrication they are just so the simulation runs"
+		(exclude_from_sim yes)
+		(at 105.918 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f75092d7-3ac3-44b4-9710-8e29b34cef02")
 	)
 	(junction
 		(at 170.18 83.82)
@@ -2004,12 +2024,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4259046b-bd65-4077-8ec5-d90e80b0e99f")
-	)
-	(junction
-		(at 86.36 76.2)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4d10d271-8e6f-4d64-9d87-a05623ac6174")
 	)
 	(junction
 		(at 57.15 76.2)
@@ -2096,16 +2110,28 @@
 		(uuid "c43c662f-1010-477a-b712-8c65f55773d3")
 	)
 	(junction
+		(at 80.01 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ca7fcedf-43ad-44c0-9cba-70a8d0041f65")
+	)
+	(junction
 		(at 80.01 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "cbb2b9bf-1399-4718-9146-eb7fa832cbac")
+		(uuid "cc6d886e-1221-4061-9ac1-468b93a4808d")
 	)
 	(junction
 		(at 142.24 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8adb999-c4dc-4216-965d-c9060b8a92ad")
+	)
+	(junction
+		(at 86.36 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e96f5d7e-0180-44f0-8d79-2fa2dc207cb5")
 	)
 	(wire
 		(pts
@@ -2149,6 +2175,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 87.63) (xy 170.18 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d59aa7e-006b-4eb4-b4b4-4be21a3d015c")
+	)
+	(wire
+		(pts
 			(xy 111.76 86.36) (xy 111.76 96.52)
 		)
 		(stroke
@@ -2156,6 +2192,16 @@
 			(type default)
 		)
 		(uuid "1763e97e-6bc3-4b79-9fd5-889bdf40c851")
+	)
+	(wire
+		(pts
+			(xy 170.18 87.63) (xy 170.18 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1812f1ca-79c4-4ae0-9cd2-e4d8d0430c8d")
 	)
 	(wire
 		(pts
@@ -2239,7 +2285,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 66.04) (xy 163.83 66.04)
+			(xy 87.63 81.28) (xy 170.18 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2276,16 +2322,6 @@
 			(type default)
 		)
 		(uuid "59e23225-ff2c-4e79-97ec-c005287fb844")
-	)
-	(wire
-		(pts
-			(xy 88.9 66.04) (xy 88.9 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c9f3631-6045-4023-b6c9-bc886ac20634")
 	)
 	(wire
 		(pts
@@ -2329,6 +2365,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 76.2) (xy 80.01 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7432a7d5-5ab7-43ca-a792-b8235a50d1be")
+	)
+	(wire
+		(pts
 			(xy 180.34 83.82) (xy 179.07 83.82)
 		)
 		(stroke
@@ -2336,6 +2382,16 @@
 			(type default)
 		)
 		(uuid "8202f363-1b7e-4a5f-92af-41c7f862ae71")
+	)
+	(wire
+		(pts
+			(xy 87.63 76.2) (xy 86.36 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8387a44a-0ca7-460f-a047-819f2890fc92")
 	)
 	(wire
 		(pts
@@ -2399,16 +2455,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 66.04) (xy 163.83 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0a100c2-16f3-4997-8028-fff010ed2c1b")
-	)
-	(wire
-		(pts
 			(xy 82.55 86.36) (xy 86.36 86.36)
 		)
 		(stroke
@@ -2449,13 +2495,13 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 78.74) (xy 86.36 78.74)
+			(xy 163.83 95.25) (xy 163.83 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b70fc9cd-71de-40bf-b5d4-60085e991219")
+		(uuid "b3679e2d-c45c-42ec-a004-accb73f1eb94")
 	)
 	(wire
 		(pts
@@ -2479,16 +2525,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 76.2) (xy 86.36 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bee5f93c-d365-4aaa-947e-9a9dad84322d")
-	)
-	(wire
-		(pts
 			(xy 55.88 72.39) (xy 57.15 72.39)
 		)
 		(stroke
@@ -2506,16 +2542,6 @@
 			(type default)
 		)
 		(uuid "cde209d8-5628-482a-9649-dd1a73b55603")
-	)
-	(wire
-		(pts
-			(xy 80.01 76.2) (xy 80.01 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d504ff58-d9c1-4398-befd-7ef3b465f683")
 	)
 	(wire
 		(pts
@@ -2639,6 +2665,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 78.74) (xy 80.01 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb3cb14a-dec1-4055-8ce5-21811e206743")
+	)
+	(wire
+		(pts
 			(xy 179.07 95.25) (xy 171.45 95.25)
 		)
 		(stroke
@@ -2646,6 +2682,16 @@
 			(type default)
 		)
 		(uuid "feccb532-2152-4afe-9d4e-c3b684cc56f6")
+	)
+	(wire
+		(pts
+			(xy 80.01 78.74) (xy 86.36 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffafca13-f429-433b-985d-f1c7c2f93e3d")
 	)
 	(label "VC1"
 		(at 170.18 81.28 0)
@@ -2724,7 +2770,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "/home/christian/Downloads/slum521/UCC28C43_PSPICE_TRANS_UNENCR_18FEB2016/ucc28c43_trans_unencrypted.lib"
+		(property "Sim.Library" "ucc28c43_trans_unencrypted.lib"
 			(at 99.06 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -2735,7 +2781,7 @@
 				)
 			)
 		)
-		(property "Sim.Name" "UCC28C43_STEADY"
+		(property "Sim.Name" "UCC28C43_START"
 			(at 99.06 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -3168,7 +3214,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15K"
+		(property "Value" "22k"
 			(at 81.788 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3933,7 +3979,7 @@
 				)
 			)
 		)
-		(property "Sim.Library" "/home/christian/Downloads/irf840.lib"
+		(property "Sim.Library" "irf840.lib"
 			(at 139.7 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -4362,7 +4408,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 92.71 66.04 90)
+		(at 83.82 81.28 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4373,7 +4419,7 @@
 		(fields_autoplaced yes)
 		(uuid "dafb249c-d59a-40bc-8b01-14b243d4d9fe")
 		(property "Reference" "R8"
-			(at 92.71 59.69 90)
+			(at 83.82 74.93 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4383,7 +4429,7 @@
 			)
 		)
 		(property "Value" "1M"
-			(at 92.71 62.23 90)
+			(at 83.82 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4393,7 +4439,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 67.818 90)
+			(at 83.82 83.058 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4404,7 +4450,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 66.04 0)
+			(at 83.82 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4415,7 +4461,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 92.71 66.04 0)
+			(at 83.82 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

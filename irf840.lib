@@ -1,0 +1,1 @@
+.model IRF840 vdmos VTO=3.773 RS=0.03742 KP=11.192 RD=0.7482 RG=5 mfg=International_Rectifier Vds=500 CGDMAX=3.90n CGDMIN=1.00E-11 Cjo=1.05n IS=4.35e-13 Rb=0.0122 TT=1.638e-06 Cgs=1.10E-09 Ksubthres=0.1 

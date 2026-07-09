@@ -1,3 +1,7 @@
 .history/
 *.lck
 .DS_Store
+.vscode/
+build/
+.cache/
+.clangd

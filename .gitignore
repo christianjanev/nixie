@@ -5,3 +5,5 @@
 build/
 .cache/
 .clangd
+*.swp
+*.old

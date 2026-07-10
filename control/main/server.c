@@ -34,6 +34,32 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
 
 }
 
+long read_file(char* file_path, char** buffer)
+{
+    long file_size = -1;
+    
+    FILE* file = fopen(file_path, "r");
+    
+    if (file != NULL)
+    {
+        fseek(file, 0, SEEK_END);
+        file_size = ftell(file);
+        rewind(file);
+
+        *buffer = (char*)malloc(file_size + 1);
+        printf("Reading file\n");
+        fread(*buffer, file_size, 1, file);
+    }
+    else
+    {
+        printf("Failed to read file: %s\n", file_path);
+    }
+
+    fclose(file);
+
+    return file_size;
+}
+
 esp_err_t initialize_wifi(esp_netif_t** netif)
 {
     wifi_event_group = xEventGroupCreate();
@@ -77,8 +103,24 @@ esp_err_t initialize_wifi(esp_netif_t** netif)
 }
 
 esp_err_t root_uri_handler(httpd_req_t* req)
-{
-    ESP_ERROR_CHECK(httpd_resp_send(req, "hello world\n", 12));
+{   
+    char* index_buffer = "";
+    long index_size = read_file("/server/index.html", &index_buffer);
+    if (index_size == -1) printf("Failed to read index.html\n");
+    ESP_ERROR_CHECK(httpd_resp_send(req, index_buffer, index_size));
+
+    return ESP_OK;
+}
+
+esp_err_t css_uri_handler(httpd_req_t* req)
+{   
+    char* css_buffer = "";
+    long css_size = read_file("/server/mystyle.css", &css_buffer);
+    if (css_size == -1) printf("Failed to read mystyle.css\n");
+
+    ESP_ERROR_CHECK(httpd_resp_set_type(req, "text/css"));
+    ESP_ERROR_CHECK(httpd_resp_send(req, css_buffer, css_size));
+
     return ESP_OK;
 }
 
@@ -86,12 +128,20 @@ void register_uri_handlers(httpd_handle_t server)
 {
     httpd_uri_t root_uri = {
         .uri = "/",
-	.method = HTTP_GET,
-	.handler = root_uri_handler,
-	.user_ctx = NULL
+        .method = HTTP_GET,
+        .handler = root_uri_handler,
+        .user_ctx = NULL
+    };
+
+    httpd_uri_t css_uri = {
+        .uri = "/mystyle.css",
+        .method = HTTP_GET,
+        .handler = css_uri_handler,
+        .user_ctx = NULL
     };
 
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &root_uri));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &css_uri));
 }
 
 httpd_handle_t start_server()

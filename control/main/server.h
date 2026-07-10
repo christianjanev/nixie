@@ -12,6 +12,8 @@
 
 #define WIFI_CONNECTED_BIT BIT0
 
+void initialize_server_flash();
+
 esp_err_t initialize_wifi(esp_netif_t** netif);
 
 httpd_handle_t start_server();

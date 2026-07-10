@@ -58,8 +58,8 @@ esp_err_t initialize_wifi(esp_netif_t** netif)
 
     wifi_config_t station_config = {
         .sta = {
-            .ssid = "SSID",
-            .password = "PSK"
+            .ssid = SSID,
+            .password = PSK
         },
     };
 

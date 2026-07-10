@@ -1,0 +1,6 @@
+[submodule "control/esp_littlefs"]
+	path = control/esp_littlefs
+	url = https://github.com/joltwallet/esp_littlefs.git
+[submodule "control/components/esp_littlefs"]
+	path = control/components/esp_littlefs
+	url = https://github.com/joltwallet/esp_littlefs.git

@@ -76,11 +76,34 @@ esp_err_t initialize_wifi(esp_netif_t** netif)
     else return ESP_FAIL;
 }
 
+esp_err_t root_uri_handler(httpd_req_t* req)
+{
+    ESP_ERROR_CHECK(httpd_resp_send(req, "hello world\n", 12));
+    return ESP_OK;
+}
+
+void register_uri_handlers(httpd_handle_t server)
+{
+    httpd_uri_t root_uri = {
+        .uri = "/",
+	.method = HTTP_GET,
+	.handler = root_uri_handler,
+	.user_ctx = NULL
+    };
+
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &root_uri));
+}
+
 httpd_handle_t start_server()
 {
     httpd_config_t config = HTTPD_DEFAULT_CONFIG();
+    config.max_uri_handlers = 20;
+    config.uri_match_fn = httpd_uri_match_wildcard;
+
     httpd_handle_t server = NULL;
     ESP_ERROR_CHECK(httpd_start(&server, &config));
+
+    register_uri_handlers(server);
 
     return server;
 }

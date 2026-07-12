@@ -1,9 +1,9 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-// Enter AP credentials
-#define SSID ""
-#define PSK ""
+#include "build/config/sdkconfig.h"
+#define SSID CONFIG_SSID
+#define PSK CONFIG_PSK
 
 #include <esp_http_server.h>
 #include <esp_err.h>

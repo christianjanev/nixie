@@ -1,0 +1,8 @@
+menu "Nixie WiFi Options"
+
+    config SSID
+        string "SSID"
+    config PSK
+        string "Passkey"
+
+endmenu

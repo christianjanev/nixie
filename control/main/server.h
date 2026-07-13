@@ -1,7 +1,7 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include "build/config/sdkconfig.h"
+#include "sdkconfig.h"
 #define SSID CONFIG_SSID
 #define PSK CONFIG_PSK
 

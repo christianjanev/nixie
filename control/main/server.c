@@ -9,10 +9,11 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
         switch (event_id)
         {
             case WIFI_EVENT_STA_START:
+                printf("Connecting to %s\n", SSID);
                 esp_wifi_connect();
                 break;
             case WIFI_EVENT_STA_DISCONNECTED:
-                printf("Disconnected...Attemping to reconnect.\n");
+                printf("Disconnected...Attemping to reconnect to %s.\n", SSID);
                 esp_wifi_connect();
                 break;
         }
@@ -115,15 +116,42 @@ esp_err_t root_uri_handler(httpd_req_t* req)
 esp_err_t css_uri_handler(httpd_req_t* req)
 {   
     char* css_buffer = "";
-    long css_size = read_file("/server/mystyle.css", &css_buffer);
-    if (css_size == -1) printf("Failed to read mystyle.css\n");
+    const char* uri = req->uri;
+    int uri_len = strlen(uri);
+    if (strcmp(&uri[uri_len - 5], ".css"))
+    {
+        int file_path_len = strlen("/server") + uri_len + 1;
+        char file_path[file_path_len];
+        printf("uri = %s, uri_len = %d\n", uri, uri_len);
+        snprintf(file_path, file_path_len, "/server%s", uri);
+        long css_size = read_file(file_path, &css_buffer);
+        if (css_size == -1) printf("Failed to read %s\n", file_path);
 
-    ESP_ERROR_CHECK(httpd_resp_set_type(req, "text/css"));
-    ESP_ERROR_CHECK(httpd_resp_send(req, css_buffer, css_size));
-
+        ESP_ERROR_CHECK(httpd_resp_set_type(req, "text/css"));
+        ESP_ERROR_CHECK(httpd_resp_send(req, css_buffer, css_size));
+    }
     return ESP_OK;
 }
 
+esp_err_t js_uri_handler(httpd_req_t* req)
+{   
+    char* js_buffer = "";
+    const char* uri = req->uri;
+    int uri_len = strlen(uri);
+    if (strcmp(&uri[uri_len - 4], ".js"))
+    {
+        int file_path_len = strlen("/server") + uri_len + 1;
+        char file_path[file_path_len];
+        printf("uri = %s, uri_len = %d\n", uri, uri_len);
+        snprintf(file_path, file_path_len, "/server%s", uri);
+        long js_size = read_file(file_path, &js_buffer);
+        if (js_size == -1) printf("Failed to read %s\n", file_path);
+
+        ESP_ERROR_CHECK(httpd_resp_set_type(req, "text/javascript"));
+        ESP_ERROR_CHECK(httpd_resp_send(req, js_buffer, js_size));
+    }
+    return ESP_OK;
+}
 void register_uri_handlers(httpd_handle_t server)
 {
     httpd_uri_t root_uri = {
@@ -134,14 +162,22 @@ void register_uri_handlers(httpd_handle_t server)
     };
 
     httpd_uri_t css_uri = {
-        .uri = "/mystyle.css",
+        .uri = "/css/*",
         .method = HTTP_GET,
         .handler = css_uri_handler,
         .user_ctx = NULL
     };
 
+    httpd_uri_t js_uri = {
+        .uri = "/scripts/*",
+        .method = HTTP_GET,
+        .handler = js_uri_handler,
+        .user_ctx = NULL
+    };
+
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &root_uri));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &css_uri));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &js_uri));
 }
 
 httpd_handle_t start_server()

@@ -2180,6 +2180,96 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "DATA_IN_2"
+		(exclude_from_sim yes)
+		(at 69.596 89.408 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "066ac88f-f3a2-48ed-a27e-603734d13973")
+	)
+	(text "CLK_2"
+		(exclude_from_sim yes)
+		(at 67.818 86.868 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1a94e068-9d10-4013-b23d-4a7a83247dc3")
+	)
+	(text "CLK_1"
+		(exclude_from_sim yes)
+		(at 67.818 99.568 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1b1d954a-f36c-4c25-a2f2-6941a82ddeaf")
+	)
+	(text "VDD"
+		(exclude_from_sim yes)
+		(at 66.802 97.028 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2374c014-76ba-4590-92ca-0546aa64b9bb")
+	)
+	(text "DATA_OUT_1"
+		(exclude_from_sim yes)
+		(at 70.358 104.648 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "294e05e2-3ccf-49e7-a3d5-bb9fac8af748")
+	)
+	(text "DATA_OUT_2"
+		(exclude_from_sim yes)
+		(at 70.358 91.948 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4da62215-c61c-4c9a-aff5-eeb0720cb4c1")
+	)
+	(text "GND"
+		(exclude_from_sim yes)
+		(at 66.802 94.488 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6ae53357-7709-455d-bed7-7fad5ffa7860")
+	)
+	(text "170V"
+		(exclude_from_sim yes)
+		(at 67.31 84.328 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7ae0cd45-7e0a-4730-be59-6c0607179b3e")
+	)
+	(text "DATA_IN_1"
+		(exclude_from_sim yes)
+		(at 69.596 102.108 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ee575ac4-e69e-421a-bb7b-968664b2a5cd")
+	)
 	(junction
 		(at 240.03 85.09)
 		(diameter 0)
@@ -3790,7 +3880,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "15319dc3-135e-4a30-ab93-e7dda7c828e4")
-		(property "Reference" "U11"
+		(property "Reference" "U4"
 			(at 190.5 35.5599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3980,7 +4070,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U11")
+					(reference "U4")
 					(unit 4)
 				)
 			)
@@ -3999,7 +4089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5475f50b-e9c7-4a50-9b12-718c82f85918")
-		(property "Reference" "N16"
+		(property "Reference" "N1"
 			(at 180.34 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4097,7 +4187,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N16")
+					(reference "N1")
 					(unit 1)
 				)
 			)
@@ -4115,7 +4205,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "55f9a28e-e1b7-4b3a-a624-7de0c0e7b927")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 131.6833 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4305,7 +4395,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U12")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -4323,7 +4413,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5b6bfdf3-7275-4a56-a880-e185d6698d69")
-		(property "Reference" "N18"
+		(property "Reference" "N5"
 			(at 261.62 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4421,7 +4511,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N18")
+					(reference "N5")
 					(unit 1)
 				)
 			)
@@ -4439,7 +4529,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "626a37e0-c547-4f82-bbe7-055f3442efd9")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 227.33 154.9399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4629,7 +4719,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U12")
+					(reference "U5")
 					(unit 3)
 				)
 			)
@@ -4647,7 +4737,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a47919d-53eb-4603-b5e4-7b739b516742")
-		(property "Reference" "N14"
+		(property "Reference" "N4"
 			(at 219.71 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4745,7 +4835,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N14")
+					(reference "N4")
 					(unit 1)
 				)
 			)
@@ -4763,7 +4853,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aedd6886-3b76-4513-819b-863bc1dc81e5")
-		(property "Reference" "N17"
+		(property "Reference" "N3"
 			(at 220.98 99.06 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4861,7 +4951,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N17")
+					(reference "N3")
 					(unit 1)
 				)
 			)
@@ -4879,7 +4969,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd18846a-dab6-4851-ac9d-873b316569b7")
-		(property "Reference" "N15"
+		(property "Reference" "N6"
 			(at 260.35 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4977,7 +5067,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N15")
+					(reference "N6")
 					(unit 1)
 				)
 			)
@@ -4995,7 +5085,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd4ac9e7-d956-4887-998e-110723557564")
-		(property "Reference" "U11"
+		(property "Reference" "U4"
 			(at 261.62 35.5599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5185,7 +5275,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U11")
+					(reference "U4")
 					(unit 2)
 				)
 			)
@@ -5203,7 +5293,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8ecb734-7c87-49ea-8027-889f2e3e8ebc")
-		(property "Reference" "U11"
+		(property "Reference" "U4"
 			(at 226.06 35.5599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5393,7 +5483,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U11")
+					(reference "U4")
 					(unit 3)
 				)
 			)
@@ -5411,7 +5501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d13fda51-01cd-48d6-932f-47dbe1d31034")
-		(property "Reference" "J1"
+		(property "Reference" "J2"
 			(at 59.69 96.5201 0)
 			(hide yes)
 			(show_name no)
@@ -5498,7 +5588,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "J1")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -5516,7 +5606,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "da32bb3f-54d0-4610-8d4d-e633aff62ad9")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 261.62 154.9399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5706,7 +5796,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U12")
+					(reference "U5")
 					(unit 4)
 				)
 			)
@@ -5724,7 +5814,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e758ed4c-e4f6-41ee-b57c-f05b6accfa92")
-		(property "Reference" "U11"
+		(property "Reference" "U4"
 			(at 113.9033 27.94 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5914,7 +6004,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U11")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -5932,7 +6022,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e8edb5c1-49e7-492c-83dd-72c9c104fcb6")
-		(property "Reference" "N13"
+		(property "Reference" "N2"
 			(at 179.07 62.23 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6030,7 +6120,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "N13")
+					(reference "N2")
 					(unit 1)
 				)
 			)
@@ -6048,7 +6138,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f58a74d8-6523-4bde-8303-b7964224d5d7")
-		(property "Reference" "U12"
+		(property "Reference" "U5"
 			(at 191.77 154.9399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6238,7 +6328,7 @@
 		(instances
 			(project "nixie"
 				(path "/002ab559-5526-44bb-90c7-ab66e50376b8"
-					(reference "U12")
+					(reference "U5")
 					(unit 2)
 				)
 			)
@@ -6246,7 +6336,7 @@
 	)
 	(sheet_instances
 		(path "/"
-			(page "3")
+			(page "2")
 		)
 	)
 )

@@ -1,9 +1,19 @@
-#include <freertos/FreeRTOS.h>
-#include <esp_system.h>
-#include <driver/gpio.h>
 #include "server.h"
-#include <esp_littlefs.h>
-#include <stdio.h>
+#include "control.h"
+
+#include <time.h>
+
+int led_on = 0;
+
+int toggle_led()
+{
+    struct timespec epoch;
+    clock_gettime(CLOCK_REALTIME, &epoch);
+    
+    struct tm* date_time = localtime(&(epoch.tv_sec));
+    printf("time = %d:%d:%d\n", date_time->tm_hour, date_time->tm_min, date_time->tm_sec);
+    return led_on;
+}
 
 void initialize_server_flash()
 {
@@ -42,6 +52,7 @@ void app_main(void)
     if ((err = initialize_wifi(&network_interface)) == ESP_OK)
     {
         gpio_set_level(GPIO_NUM_2, 1);
+        led_on = 1;
         start_server();
     }
     else

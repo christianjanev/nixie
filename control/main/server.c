@@ -1,4 +1,5 @@
 #include "server.h"
+#include "control.h"
 
 static EventGroupHandle_t wifi_event_group;
 
@@ -26,7 +27,7 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
             {
                 ip_event_got_ip_t* event = (ip_event_got_ip_t*)event_data;
                 printf("Obtained IP=%d.%d.%d.%d\n", IP2STR(&event->ip_info.ip));
-
+                start_ntp();
                 xEventGroupSetBits(wifi_event_group, WIFI_CONNECTED_BIT);
                 break;
             }
@@ -152,6 +153,14 @@ esp_err_t js_uri_handler(httpd_req_t* req)
     }
     return ESP_OK;
 }
+
+esp_err_t activate_led_uri_handler(httpd_req_t* req)
+{
+    toggle_led();
+
+    return ESP_OK;
+}
+
 void register_uri_handlers(httpd_handle_t server)
 {
     httpd_uri_t root_uri = {
@@ -175,9 +184,17 @@ void register_uri_handlers(httpd_handle_t server)
         .user_ctx = NULL
     };
 
+    httpd_uri_t activate_led_uri = {
+        .uri = "/activate",
+        .method = HTTP_POST,
+        .handler = activate_led_uri_handler,
+        .user_ctx = NULL
+    };
+
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &root_uri));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &css_uri));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &js_uri));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &activate_led_uri));
 }
 
 httpd_handle_t start_server()
@@ -192,4 +209,15 @@ httpd_handle_t start_server()
     register_uri_handlers(server);
 
     return server;
+}
+
+esp_err_t start_ntp()
+{
+    esp_setenv("TZ", "CST6CDT,M3.2.0,M11.1.0", 1); // America/Chicago
+    tzset();
+
+    sntp_config_t config = ESP_NETIF_SNTP_DEFAULT_CONFIG("time.nist.gov");
+    esp_netif_sntp_init(&config);
+    
+    return esp_netif_sntp_start();
 }

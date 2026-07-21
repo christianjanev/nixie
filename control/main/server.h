@@ -8,6 +8,7 @@
 #include <esp_http_server.h>
 #include <esp_err.h>
 #include <esp_wifi.h>
+#include <esp_netif_sntp.h>
 #include <nvs_flash.h>
 
 #define WIFI_CONNECTED_BIT BIT0
@@ -17,5 +18,6 @@ void initialize_server_flash();
 esp_err_t initialize_wifi(esp_netif_t** netif);
 
 httpd_handle_t start_server();
+esp_err_t start_ntp();
 
 #endif // SERVER_H

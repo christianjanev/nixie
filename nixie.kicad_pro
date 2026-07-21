@@ -696,15 +696,33 @@
         "filename": "nixie.kicad_sch",
         "name": "Root",
         "uuid": "a7362739-e7f9-42c3-95d0-1c36d48315bc"
+      },
+      {
+        "filename": "power.kicad_sch",
+        "name": "power",
+        "uuid": "3c6f1762-0672-46d1-a9c2-3d651cb7624a"
+      },
+      {
+        "filename": "breakout.kicad_sch",
+        "name": "breakout",
+        "uuid": "002ab559-5526-44bb-90c7-ab66e50376b8"
       }
     ],
-    "used_designators": "V1,Q1,#PWR1-2,D1,C1-5,U1-6,SW1-2,N1-6,L1,#GND1,#FLG1-2,BT1,R1-11",
+    "used_designators": "J1-2,V1-2,Q1-2,#PWR1-2,D1-2,C1-8,U1-12,SW1-2,N1-18,L1-2,#GND1-2,#FLG1-4,BT1,R1-16",
     "variants": []
   },
   "sheets": [
     [
       "a7362739-e7f9-42c3-95d0-1c36d48315bc",
       "Root"
+    ],
+    [
+      "3c6f1762-0672-46d1-a9c2-3d651cb7624a",
+      "power"
+    ],
+    [
+      "002ab559-5526-44bb-90c7-ab66e50376b8",
+      "breakout"
     ]
   ],
   "text_variables": {},

@@ -5417,7 +5417,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 180.34 91.948 90)
 			(hide yes)
 			(show_name no)
@@ -5931,7 +5931,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "USB_PD_Connector:USB C PD Deceiver"
 			(at 31.75 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -6289,7 +6289,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x09_P2.54mm_Vertical"
 			(at 189.23 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -6955,7 +6955,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 62.23 116.078 90)
 			(hide yes)
 			(show_name no)

@@ -1,0 +1,121 @@
+(footprint "USB C PD Deceiver"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "The AliExpress Special")
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "30a32a95-28a0-4dbe-97a9-4d33edf10128")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "86165802-9ce6-4739-98fd-797a80225854")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "USB_C_PD_Deceiver"
+		(at -6.5 -10 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "a57ed78d-16f2-40db-b34b-ffd5b2f850ba")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Reference" "REF**"
+		(at -6.5 -11.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "a311252c-67d7-4611-a145-549c71b89020")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -6.61 -5.11)
+		(end 6.61 5.11)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "716c912a-a9c9-4ee1-978d-c0c578355a4f")
+	)
+	(fp_rect
+		(start -6.75 -5.25)
+		(end 6.75 5.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "128be2e8-73d7-4f15-adf6-f06836c4eaa1")
+	)
+	(fp_rect
+		(start -6.5 -5)
+		(end 6.5 5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "fd424942-5132-4b8b-9956-7f2a63586283")
+	)
+	(fp_text user "${REFERENCE}"
+		(at -6.5 -8.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "401fe533-8ba3-4127-af34-c23d88e6b69f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -5 -4)
+		(size 1.5 1.5)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "777cae3d-3d9f-4356-b5f4-1272f6ef6b74")
+	)
+	(pad "2" thru_hole circle
+		(at -5 4)
+		(size 1.5 1.5)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fb72b392-87a4-4df2-8a8b-a31522d4a012")
+	)
+	(embedded_fonts no)
+)

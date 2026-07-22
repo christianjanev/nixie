@@ -693,11 +693,6 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "nixie.kicad_sch",
-        "name": "Root",
-        "uuid": "a7362739-e7f9-42c3-95d0-1c36d48315bc"
-      },
-      {
         "filename": "power.kicad_sch",
         "name": "power",
         "uuid": "3c6f1762-0672-46d1-a9c2-3d651cb7624a"
@@ -708,14 +703,10 @@
         "uuid": "002ab559-5526-44bb-90c7-ab66e50376b8"
       }
     ],
-    "used_designators": "L1-3,#GND1-2,BT1,R1-26,J1-3,#FLG1-6,Q1-3,N1-18,V1-3,#PWR1-7,U1-13,D1-3,C1-12,SW1-3",
+    "used_designators": "N1-18,C1-12,D1-3,U1-13,Q1-3,SW1-3,L1-3,#GND1-2,BT1,R1-26,J1-3,#FLG1-6,V1-3,#PWR1-7",
     "variants": []
   },
   "sheets": [
-    [
-      "a7362739-e7f9-42c3-95d0-1c36d48315bc",
-      "Root"
-    ],
     [
       "3c6f1762-0672-46d1-a9c2-3d651cb7624a",
       "power"
